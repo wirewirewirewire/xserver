@@ -15,6 +15,18 @@ RUN install_packages \
     xserver-xorg-legacy \
     xserver-xorg-video-all
 
+#drivers to install
+RUN install_packages \
+    libgles2-mesa \
+    mesa-vdpau-drivers \
+    xserver-xorg-video-fbdev \
+    libgl1-mesa-dri \
+    libglx-mesa0 \
+    mesa-vulkan-drivers \
+    alsa-utils \
+    libasound2-dev \
+    xterm
+
 WORKDIR /opt/xserver
 
 COPY src/xinitrc /root/.xinitrc
