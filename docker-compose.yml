@@ -1,0 +1,10 @@
+version: "2.1"
+volumes:
+  xserver:
+services:
+  xserver:
+    build: .
+    restart: always
+    privileged: true
+    volumes:
+      - "xserver:/tmp/.X11-unix"
