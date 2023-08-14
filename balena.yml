@@ -1,17 +1,17 @@
 name: xserver
 description: >-
   A simple block that runs an X server for GUI applications
-version: 0.2.0
+version: 0.2.1
 type: sw.block
 assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-labs-projects/xserver'
+      url: "https://github.com/balena-labs-projects/xserver"
   logo:
     type: blob.asset
     data:
-      url: 'https://raw.githubusercontent.com/balena-labs-projects/xserver/master/logo.png'
+      url: "https://raw.githubusercontent.com/balena-labs-projects/xserver/master/logo.png"
 data:
   defaultDeviceType: raspberrypi3
   supportedDeviceTypes:
