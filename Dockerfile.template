@@ -32,6 +32,8 @@ WORKDIR /opt/xserver
 COPY src/xinitrc /root/.xinitrc
 
 COPY src/entry.sh src/config.sh VERSION /opt/xserver/
+ENV UDEV=1
+
 
 
 RUN sed -i -e 's/\r$//' /opt/xserver/entry.sh
