@@ -86,3 +86,8 @@ xinput set-prop ${i} 'Coordinate Transformation Matrix' $COORDS
 done
 
 fi
+
+xset s noblank
+xset -dpms
+xset s off
+xset dpms 0 0 0
