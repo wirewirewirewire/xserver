@@ -30,7 +30,7 @@ then
 	fi
 fi
 
-if [ "$CURSOR" = true ];
+if [ "$CURSOR" = "true" ];
 then
     echo  "Starting X with cursor enabled"
     exec startx -- $FORCE_DISPLAY
