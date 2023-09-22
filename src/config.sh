@@ -92,15 +92,15 @@ then
     echo  "Multi Display Enabled !"
     #xrandr --output DisplayPort-1 --mode 1920x1080 --primary --rotate normal --output DisplayPort-2 --mode 1920x1080 --rotate normal --right-of DisplayPort-1 --output DisplayPort-0 --mode 1920x1080 --rotate normal --left-of DisplayPort-1
     #xrandr --output HDMI-4 --mode 1920x1080 --primary --rotate normal --output DP-5 --mode 1920x1080 --rotate normal --right-of HDMI-4 --output DP-4 --mode 1920x1080 --rotate normal --left-of HDMI-4
-    xrandr --output DP-4 --off
-    xrandr --output HDMI-4 --off
-    xrandr --output DP-5 --off
+    xrandr --output DisplayPort-1 --off
+    xrandr --output HDMI-A-0 --off
+    xrandr --output DisplayPort-0 --off
 
-    xrandr --output DP-4 --auto --primary
-    xrandr --output HDMI-4 --auto --right-of DP-4
-    xrandr --output DP-5 --auto --right-of HDMI-4
-    xrandr --output HDMI-4 --mode 1920x1080 --right-of DP-4
-    xrandr --output DP-5 --mode 1920x1080 --right-of HDMI-4
+    xrandr --output DisplayPort-1 --auto --primary
+    xrandr --output HDMI-A-0 --auto --right-of DisplayPort-1
+    xrandr --output DisplayPort-0 --auto --right-of HDMI-A-0
+    xrandr --output HDMI-A-0 --mode 1920x1080 --right-of DisplayPort-1
+    xrandr --output DisplayPort-0 --mode 1920x1080 --right-of HDMI-A-0
 
 
 else
