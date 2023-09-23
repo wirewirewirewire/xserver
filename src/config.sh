@@ -108,6 +108,22 @@ else
 
 fi
 
+if [ "$KVDISPLAY" = "true" ];
+then
+    echo  "KV Display Active"
+    DISPLAY=:0 xrandr --output HDMI-1 --mode 3840x2160 --rate 25
+    DISPLAY=:0 xrandr --output HDMI-2 --mode 3840x2160 --rate 25
+fi
+
+if [ "$KVDISPLAY2" = "true" ];
+then
+    echo  "KV Display 2 Active"
+    DISPLAY=:0 xrandr --output HDMI-1 --mode 1920x1200 --rate 25
+    DISPLAY=:0 xrandr --output HDMI-2 --mode 1920x1200 --rate 25
+
+fi
+
+
 xset s noblank
 xset -dpms
 xset s off
