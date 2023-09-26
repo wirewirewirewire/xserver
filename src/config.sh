@@ -102,6 +102,18 @@ then
     xrandr --output HDMI-A-0 --mode 1920x1080 --right-of DisplayPort-1
     xrandr --output DisplayPort-0 --mode 1920x1080 --right-of HDMI-A-0
 
+    xrandr --output DP-2 --off
+    xrandr --output HDMI-1 --off
+    xrandr --output DP-1 --off
+
+    xrandr --output DP-2 --auto --primary
+    xrandr --output HDMI-1 --auto --right-of DP-2
+    xrandr --output DP-1 --auto --right-of HDMI-1
+    xrandr --output HDMI-1 --mode 1920x1080 --right-of DP-2
+    xrandr --output DP-1 --mode 1920x1080 --right-of HDMI-1
+
+    
+
 
 else
     xrandr --auto
