@@ -135,6 +135,13 @@ then
 
 fi
 
+if [ "$FULLHD" = "true" ];
+then
+    echo  "FULLHD Display Mode"
+    DISPLAY=:0 xrandr --output HDMI-1 --mode 1920x1080 --rate 60
+    DISPLAY=:0 xrandr --output HDMI-2 --mode 1920x1080 --rate 60
+fi
+
 
 xset s noblank
 xset -dpms
