@@ -96,21 +96,31 @@ then
     xrandr --output HDMI-A-0 --off
     xrandr --output DisplayPort-0 --off
 
-    xrandr --output DisplayPort-1 --auto --primary
-    xrandr --output HDMI-A-0 --auto --right-of DisplayPort-1
-    xrandr --output DisplayPort-0 --auto --right-of HDMI-A-0
-    xrandr --output HDMI-A-0 --mode 1920x1080 --right-of DisplayPort-1
-    xrandr --output DisplayPort-0 --mode 1920x1080 --right-of HDMI-A-0
+    #xrandr --output DisplayPort-1 --auto --primary
+    #xrandr --output HDMI-A-0 --auto --right-of DisplayPort-1
+    #xrandr --output DisplayPort-0 --auto --right-of HDMI-A-0
+    xrandr --output HDMI-A-0 --auto --primary
+    xrandr --output DisplayPort-1 --auto --right-of HDMI-A-0
+    xrandr --output DisplayPort-0 --auto --right-of DisplayPort-1
+    #xrandr --output HDMI-A-0 --mode 1920x1080 --right-of DisplayPort-1
+    #xrandr --output DisplayPort-0 --mode 1920x1080 --right-of HDMI-A-0
+    xrandr --output DisplayPort-1 --mode 1920x1080 --right-of HDMI-A-0
+    xrandr --output DisplayPort-0 --mode 1920x1080 --right-of DisplayPort-1
 
     xrandr --output DP-2 --off
     xrandr --output HDMI-1 --off
     xrandr --output DP-1 --off
-
-    xrandr --output DP-2 --auto --primary
-    xrandr --output HDMI-1 --auto --right-of DP-2
-    xrandr --output DP-1 --auto --right-of HDMI-1
-    xrandr --output HDMI-1 --mode 1920x1080 --right-of DP-2
-    xrandr --output DP-1 --mode 1920x1080 --right-of HDMI-1
+    #umgesteckt
+    #xrandr --output DP-2 --auto --primary
+    #xrandr --output HDMI-1 --auto --right-of DP-2
+    #xrandr --output DP-1 --auto --right-of HDMI-1
+    xrandr --output HDMI-1 --auto --primary
+    xrandr --output DP-2 --auto --right-of HDMI-1
+    xrandr --output DP-1 --auto --right-of DP-2
+    #xrandr --output HDMI-1 --mode 1920x1080 --right-of DP-2
+    #xrandr --output DP-1 --mode 1920x1080 --right-of HDMI-1
+    xrandr --output DP-2 --mode 1920x1080 --right-of HDMI-1
+    xrandr --output DP-1 --mode 1920x1080 --right-of DP-2
 
     
 
