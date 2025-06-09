@@ -30,6 +30,12 @@ then
 	fi
 fi
 
+if [ "${BALENA_DEVICE_TYPE}" = "raspberrypi5" ]
+then
+    echo "Raspberry Pi 5 detected, injecting X.org config"
+    cp -a "/opt/xserver/99-vc4.conf" "/etc/X11/xorg.conf.d/"
+fi
+
 if [ "$CURSOR" = "true" ];
 then
     echo  "Starting X with cursor enabled"
