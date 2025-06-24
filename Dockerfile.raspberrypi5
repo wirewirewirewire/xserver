@@ -1,0 +1,48 @@
+ARG BALENA_ARCH=%%BALENA_ARCH%%
+
+FROM balenalib/$BALENA_ARCH-debian:bookworm
+
+RUN install_packages \
+    matchbox-window-manager \
+    x11-xserver-utils \
+    x11-utils \
+    xauth \
+    xinit \
+    xserver-xorg xinit \
+    xinput \
+    xserver-xorg \
+    xserver-xorg-input-all \
+    xserver-xorg-input-evdev \
+    xserver-xorg-legacy \
+    xserver-xorg-video-all
+
+#drivers to install
+RUN install_packages \
+    libgles2-mesa \
+    mesa-vdpau-drivers \
+    mesa-utils \
+    xserver-xorg-video-fbdev \
+    libgl1-mesa-dri \
+    libglx-mesa0 \
+    mesa-vulkan-drivers \
+    alsa-utils \
+    libasound2-dev \
+    xterm
+
+WORKDIR /opt/xserver
+
+COPY src/xinitrc /root/.xinitrc
+
+COPY src/entry.sh src/config.sh VERSION /opt/xserver/
+COPY 99-vc4.conf /opt/xserver/99-vc4.conf
+
+ENV UDEV=1
+
+RUN sed -i -e 's/\r$//' /opt/xserver/entry.sh
+RUN sed -i -e 's/\r$//' /opt/xserver/config.sh
+
+ENTRYPOINT  ["/bin/bash", "/opt/xserver/entry.sh"]
+
+ENV CURSOR=true \
+    UDEV=on \
+    FORCE_DISPLAY=:0
